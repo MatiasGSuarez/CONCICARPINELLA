@@ -1,0 +1,14 @@
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\bin\Debug\net8.0\PruebaTecnica.Model.deps.json
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\bin\Debug\net8.0\PruebaTecnica.Model.runtimeconfig.json
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\bin\Debug\net8.0\PruebaTecnica.Model.dll
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\bin\Debug\net8.0\PruebaTecnica.Model.pdb
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\obj\Debug\net8.0\PruebaTecnica.Model.csproj.AssemblyReference.cache
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\obj\Debug\net8.0\PruebaTecnica.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\obj\Debug\net8.0\PruebaTecnica.Model.AssemblyInfoInputs.cache
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\obj\Debug\net8.0\PruebaTecnica.Model.AssemblyInfo.cs
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\obj\Debug\net8.0\PruebaTecnica.Model.csproj.CoreCompileInputs.cache
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\obj\Debug\net8.0\PruebaTecnica.Model.dll
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\obj\Debug\net8.0\refint\PruebaTecnica.Model.dll
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\obj\Debug\net8.0\PruebaTecnica.Model.pdb
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\obj\Debug\net8.0\PruebaTecnica.Model.genruntimeconfig.cache
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.Model\obj\Debug\net8.0\ref\PruebaTecnica.Model.dll

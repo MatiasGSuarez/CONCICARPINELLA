@@ -1,0 +1,10 @@
+1 - Crear las clases en el modelo
+2 - Ponerlas en clase DbSetEntities 
+3 - Poner las clase a crear en la db en OnModelCreating
+3 - crear los repositorios
+4 - Poner el repository en addreposittory
+4 - crear los business
+5 - En la api ponerlos en servicee extension, eso los va a llamar desde el program dsps
+6 - Cambio el tipo de matricula para poder hacer las modificaciones que pide
+7 - Agregar el controller
+8 - Agregar las deficniciones del automaper

@@ -1,0 +1,17 @@
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\bin\Debug\net8.0\PruebaTecnica.DataAccess.deps.json
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\bin\Debug\net8.0\PruebaTecnica.DataAccess.dll
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\bin\Debug\net8.0\PruebaTecnica.DataAccess.pdb
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\bin\Debug\net8.0\PruebaTecnica.Model.dll
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\bin\Debug\net8.0\PruebaTecnica.Model.pdb
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\PruebaTecnica.DataAccess.csproj.AssemblyReference.cache
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\PruebaTecnica.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\PruebaTecnica.DataAccess.AssemblyInfoInputs.cache
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\PruebaTecnica.DataAccess.AssemblyInfo.cs
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\PruebaTecnica.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\PruebaTe.EC206232.Up2Date
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\PruebaTecnica.DataAccess.dll
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\refint\PruebaTecnica.DataAccess.dll
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\PruebaTecnica.DataAccess.pdb
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\ref\PruebaTecnica.DataAccess.dll
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\bin\Debug\net8.0\PruebaTecnica.DataAccess.runtimeconfig.json
+C:\Users\matia\Escritorio\CHALLENGE\PruebaTecnica\PruebaTecnica.DataAccess\obj\Debug\net8.0\PruebaTecnica.DataAccess.genruntimeconfig.cache
