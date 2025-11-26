@@ -36,21 +36,15 @@ namespace PruebaTecnica.Business
             return nuevoMedico;
         }
 
-        public async Task<Medico> UpdateMedicoAsync(int id, MedicoDTO dto)
+        public async Task<Medico> UpdateMedicobyMatriculaAsync(string matricula, MedicoDTO dto)
         {
-            var medico = await GetByIdAsync(id);
+            string matriculaFormateada = FormatearMatricula(matricula);
+            var medico = await GetByMatriculaFormateadaAsync(matriculaFormateada);
             if (medico == null)
-                throw new Exception($"No se encontró un médico con el ID {id}");
-
-            string matriculaFormateada = FormatearMatricula(dto.Matricula);
-
-            // Validar que la matrícula no esté en uso por otro médico
-            var medicoConMatricula = await GetByMatriculaFormateadaAsync(matriculaFormateada);
-            if (medicoConMatricula != null && medicoConMatricula.Id != id)
-                throw new Exception($"La matrícula {dto.Matricula} ya está en uso por otro médico");
+                throw new Exception($"No se encontró un médico con matricula: {matriculaFormateada}");
 
             medico.Nombre = dto.Nombre;
-            medico.Matricula = matriculaFormateada;
+            medico.Matricula = FormatearMatricula(dto.Matricula);
 
             await SaveAsync(medico);
             return medico;

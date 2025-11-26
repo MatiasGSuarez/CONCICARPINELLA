@@ -64,15 +64,15 @@ namespace PruebaTecnica.API.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<MedicoDTO>> UpdateMedico(int id, [FromBody] MedicoDTO dto)
+        [HttpPut("{matricula}")]
+        public async Task<ActionResult<MedicoDTO>> UpdateMedicobyMatricula(string matricula, [FromBody] MedicoDTO dto)
         {
             try
             {
                 if (dto == null)
                     return BadRequest(new ActionResultDTO { Message = "Datos inválidos" });
 
-                var medico = await medicoBusiness.UpdateMedicoAsync(id, dto);
+                var medico = await medicoBusiness.UpdateMedicobyMatriculaAsync(matricula, dto);
                 var medicoDto = mapper.Map<MedicoDTO>(medico);
 
                 return Ok(medicoDto);

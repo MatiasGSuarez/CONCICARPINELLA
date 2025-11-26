@@ -1,0 +1,9 @@
+.vs/
+PruebaTecnica.API/bin/
+PruebaTecnica.API/obj/
+PruebaTecnica.Business/bin/
+PruebaTecnica.Business/obj/
+PruebaTecnica.DataAccess/bin/
+PruebaTecnica.DataAccess/obj/
+PruebaTecnica.Model/bin/
+PruebaTecnica.Model/obj/
