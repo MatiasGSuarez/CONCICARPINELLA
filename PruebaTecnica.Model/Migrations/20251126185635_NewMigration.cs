@@ -158,12 +158,12 @@ namespace PruebaTecnica.Model.Migrations
             migrationBuilder.InsertData(
                 table: "Role",
                 columns: new[] { "Id", "Created", "CreatedBy", "Deleted", "DeletedBy", "Name", "Permissions", "Updated", "UpdatedBy" },
-                values: new object[] { 1, new DateTime(2025, 11, 24, 18, 27, 16, 998, DateTimeKind.Local).AddTicks(5029), "System", null, "", "Admin", "FullAccess", null, "" });
+                values: new object[] { 1, new DateTime(2025, 11, 26, 15, 56, 34, 728, DateTimeKind.Local).AddTicks(2512), "System", null, "", "Admin", "FullAccess", null, "" });
 
             migrationBuilder.InsertData(
                 table: "AppUser",
                 columns: new[] { "Id", "Created", "CreatedBy", "Deleted", "DeletedBy", "Name", "Password", "RoleId", "Updated", "UpdatedBy" },
-                values: new object[] { 1, new DateTime(2025, 11, 24, 18, 27, 16, 998, DateTimeKind.Local).AddTicks(4767), "System", null, "", "admin", "admin", 1, null, "" });
+                values: new object[] { 1, new DateTime(2025, 11, 26, 15, 56, 34, 728, DateTimeKind.Local).AddTicks(2249), "System", null, "", "admin", "admin", 1, null, "" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AppUser_RoleId",

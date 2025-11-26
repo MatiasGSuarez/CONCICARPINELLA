@@ -1,5 +1,6 @@
 ﻿using PruebaTecnica.Business.Base;
 using PruebaTecnica.DataAccess.Generic;
+using PruebaTecnica.Model.DTO;
 using PruebaTecnica.Model.Model;
 using System;
 using System.Collections.Generic;
@@ -15,12 +16,63 @@ namespace PruebaTecnica.Business
         {
         }
 
-        public async Task<IEnumerable<Medico>> GetListAsync(string searchText)
+        public async Task<Medico> CreateMedicoAsync(MedicoDTO dto)
         {
-            IEnumerable<Medico> list = new List<Medico>();
-            list = await unitOfWork.AddRepositories.GetRepository<Medico>()
-                .GetListAsync(x => x.Nombre.ToUpper().Contains(searchText.ToUpper()));
-            return list;
+            string matriculaFormateada = FormatearMatricula(dto.Matricula);
+
+            var medicoExistente = await GetByMatriculaFormateadaAsync(matriculaFormateada);
+            if (medicoExistente != null)
+                throw new Exception($"Ya existe un médico con la matrícula {dto.Matricula}");
+
+            var nuevoMedico = new Medico
+            {
+                Nombre = dto.Nombre,
+                Matricula = matriculaFormateada
+            };
+
+            int medicoId = await SaveAsync(nuevoMedico);
+            nuevoMedico.Id = medicoId;
+
+            return nuevoMedico;
+        }
+
+        public async Task<Medico> UpdateMedicoAsync(int id, MedicoDTO dto)
+        {
+            var medico = await GetByIdAsync(id);
+            if (medico == null)
+                throw new Exception($"No se encontró un médico con el ID {id}");
+
+            string matriculaFormateada = FormatearMatricula(dto.Matricula);
+
+            // Validar que la matrícula no esté en uso por otro médico
+            var medicoConMatricula = await GetByMatriculaFormateadaAsync(matriculaFormateada);
+            if (medicoConMatricula != null && medicoConMatricula.Id != id)
+                throw new Exception($"La matrícula {dto.Matricula} ya está en uso por otro médico");
+
+            medico.Nombre = dto.Nombre;
+            medico.Matricula = matriculaFormateada;
+
+            await SaveAsync(medico);
+            return medico;
+        }
+
+        public async Task<int> ProcesarMedicoAsync(MedicoSolicitudDTO dto)
+        {
+            string matriculaFormateada = FormatearMatricula(dto.Matricula);
+            var medicoExistente = await GetByMatriculaFormateadaAsync(matriculaFormateada);
+
+            if (medicoExistente == null)
+            {
+                var nuevoMedico = new Medico
+                {
+                    Nombre = dto.Nombre,
+                    Matricula = matriculaFormateada
+                };
+                return await SaveAsync(nuevoMedico);
+            }
+
+            medicoExistente.Nombre = dto.Nombre;
+            return await SaveAsync(medicoExistente);
         }
 
         public async Task<Medico> GetByIdAsync(int id)
@@ -28,18 +80,29 @@ namespace PruebaTecnica.Business
             return await unitOfWork.AddRepositories.GetRepository<Medico>().FindAsync(id);
         }
 
-        public async Task<Medico> GetByMatriculaAsync(string matricula)
+        public async Task<Medico> GetByMatriculaFormateadaAsync(string matricula)
         {
             var list = await unitOfWork.AddRepositories.GetRepository<Medico>().GetListAsync(x => x.Matricula == matricula);
             return list.FirstOrDefault();
         }
 
-        // NUEVO MÉTODO: Buscar por matrícula formateada (string de 12 caracteres)
-        public async Task<Medico> GetByMatriculaFormateadaAsync(string matricula)
+        private string FormatearMatricula(string matricula)
         {
-            var list = await unitOfWork.AddRepositories.GetRepository<Medico>()
-                .GetListAsync(x => x.Matricula == matricula);
-            return list.FirstOrDefault();
+            if (string.IsNullOrWhiteSpace(matricula))
+                throw new Exception("La matrícula no puede estar vacía");
+            
+            if (matricula.Length > 12)
+                throw new Exception("La matrícula no debe tener mas de 12 caracteres");
+
+            return matricula.PadLeft(12, '0');
+        }
+
+        public async Task<IEnumerable<Medico>> GetListAsync(string searchText)
+        {
+            if (string.IsNullOrWhiteSpace(searchText))
+                return await GetAsync();
+
+            return await unitOfWork.AddRepositories.GetRepository<Medico>().GetListAsync(x => x.Nombre.ToUpper().Contains(searchText.ToUpper()) || x.Matricula.Contains(searchText));
         }
 
         public virtual async Task<int> SaveAsync(Medico entity)
@@ -59,7 +122,7 @@ namespace PruebaTecnica.Business
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Error al guardar el médico", ex);
             }
         }
 
@@ -68,7 +131,6 @@ namespace PruebaTecnica.Business
             try
             {
                 var entity = await unitOfWork.AddRepositories.GetRepository<Medico>().FindAsync(id);
-
                 if (entity == null)
                     return false;
 
@@ -78,7 +140,7 @@ namespace PruebaTecnica.Business
             }
             catch (Exception ex)
             {
-                throw ex;
+                throw new Exception("Error al eliminar el médico", ex);
             }
         }
     }

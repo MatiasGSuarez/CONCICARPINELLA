@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using PruebaTecnica.API.Common;
 using PruebaTecnica.Business;
 using PruebaTecnica.Model.BaseDTO;
 using PruebaTecnica.Model.DTO;
@@ -38,85 +39,20 @@ namespace PruebaTecnica.API.Controllers
                 {
                     if (dto == null)
                         return BadRequest(new ActionResultDTO { Message = "Datos inválidos" });
+                    var estudio = await estudioBusiness.ProcesarSolicitudEstudioAsync(dto);
 
-                    // Validar que el prestador exista
-                    var prestador = await prestadorBusiness.GetByIdAsync(dto.PrestadorId);
-                    if (prestador == null)
-                        return BadRequest(new ActionResultDTO { Message = $"El prestador con ID {dto.PrestadorId} no existe" });
-
-                    // 1. Procesar Paciente - Insertar si no existe
-                    var pacienteExistente = await pacienteBusiness.GetByDniAsync(dto.Paciente.Dni);
-                    int pacienteId;
-
-                    if (pacienteExistente == null)
-                    {
-                        var nuevoPaciente = new Paciente
-                        {
-                            Dni = dto.Paciente.Dni,
-                            Nombre = dto.Paciente.Nombre,
-                            Apellido = dto.Paciente.Apellido,
-                            FechaNacimiento = dto.Paciente.FechaNacimiento
-                        };
-                        pacienteId = await pacienteBusiness.SaveAsync(nuevoPaciente);
-                    }
-                    else
-                    {
-                        pacienteId = pacienteExistente.Id;
-                    }
-
-                    // 2. Procesar Médico - Insertar o actualizar según matrícula
-                    // Validar y formatear matrícula a 12 caracteres
-                    string matriculaFormateada = dto.Medico.Matricula.PadLeft(12, '0');
-
-                    var medicoExistente = await medicoBusiness.GetByMatriculaFormateadaAsync(matriculaFormateada);
-                    int medicoId;
-
-                    if (medicoExistente == null)
-                    {
-                        var nuevoMedico = new Medico
-                        {
-                            Nombre = dto.Medico.Nombre,
-                            Matricula = matriculaFormateada
-                        };
-                        medicoId = await medicoBusiness.SaveAsync(nuevoMedico);
-                    }
-                    else
-                    {
-                        medicoExistente.Nombre = dto.Medico.Nombre;
-                        medicoId = await medicoBusiness.SaveAsync(medicoExistente);
-                    }
-
-                    // 3. Calcular edad del paciente y aplicar regla de transformación
-                    int edad = CalcularEdad(dto.Paciente.FechaNacimiento);
-                    string codigoEstudio = dto.Estudio.Codigo;
-
-                    if (edad > 48)
-                    {
-                        codigoEstudio = $"MONO-{codigoEstudio}";
-                    }
-
-                    // 4. Crear el estudio
-                    var nuevoEstudio = new Estudio
-                    {
-                        Codigo = codigoEstudio,
-                        Descripcion = dto.Estudio.Descripcion,
-                        FechaSolicitud = dto.Estudio.FechaSolicitud,
-                        PacienteId = pacienteId,
-                        MedicoId = medicoId,
-                        PrestadorId = dto.PrestadorId
-                    };
-
-                    int estudioId = await estudioBusiness.SaveAsync(nuevoEstudio);
-
-                    // 5. Retornar respuesta
                     var response = new SolicitudResponseDTO
                     {
-                        EstudioId = estudioId,
-                        CodigoEstudioGenerado = codigoEstudio,
+                        EstudioId = estudio.Id,
+                        CodigoEstudioGenerado = estudio.Codigo,
                         Message = "La solicitud de estudio se procesó correctamente"
                     };
 
                     return Ok(response);
+                }
+                catch (BusinessException bex)
+                {
+                    return BadRequest(new ActionResultDTO { Message = bex.Message });
                 }
                 catch (Exception ex)
                 {
@@ -201,16 +137,6 @@ namespace PruebaTecnica.API.Controllers
                 }
             }
 
-            private int CalcularEdad(DateTime fechaNacimiento)
-            {
-                var hoy = DateTime.Today;
-                int edad = hoy.Year - fechaNacimiento.Year;
-
-                if (fechaNacimiento.Date > hoy.AddYears(-edad))
-                    edad--;
-
-                return edad;
-            }
         }
     }
 }

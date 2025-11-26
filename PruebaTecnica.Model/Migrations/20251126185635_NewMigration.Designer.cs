@@ -12,7 +12,7 @@ using PruebaTecnica.Model;
 namespace PruebaTecnica.Model.Migrations
 {
     [DbContext(typeof(DbModelContext))]
-    [Migration("20251124212717_NewMigration")]
+    [Migration("20251126185635_NewMigration")]
     partial class NewMigration
     {
         /// <inheritdoc />
@@ -266,7 +266,7 @@ namespace PruebaTecnica.Model.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2025, 11, 24, 18, 27, 16, 998, DateTimeKind.Local).AddTicks(4767),
+                            Created = new DateTime(2025, 11, 26, 15, 56, 34, 728, DateTimeKind.Local).AddTicks(2249),
                             CreatedBy = "System",
                             DeletedBy = "",
                             Name = "admin",
@@ -326,7 +326,7 @@ namespace PruebaTecnica.Model.Migrations
                         new
                         {
                             Id = 1,
-                            Created = new DateTime(2025, 11, 24, 18, 27, 16, 998, DateTimeKind.Local).AddTicks(5029),
+                            Created = new DateTime(2025, 11, 26, 15, 56, 34, 728, DateTimeKind.Local).AddTicks(2512),
                             CreatedBy = "System",
                             DeletedBy = "",
                             Name = "Admin",

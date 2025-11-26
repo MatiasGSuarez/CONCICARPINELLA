@@ -1,5 +1,6 @@
 ﻿using PruebaTecnica.Business.Base;
 using PruebaTecnica.DataAccess.Generic;
+using PruebaTecnica.Model.DTO;
 using PruebaTecnica.Model.Model;
 using System;
 using System.Collections.Generic;
@@ -15,13 +16,29 @@ namespace PruebaTecnica.Business
         {
         }
 
+        public async Task<int> ProcesarPacienteAsync(PacienteSolicitudDTO dto)
+        {
+            var pacienteExistente = await GetByDniAsync(dto.Dni);
+
+            if (pacienteExistente != null)
+                return pacienteExistente.Id;
+
+            var nuevoPaciente = new Paciente
+            {
+                Dni = dto.Dni,
+                Nombre = dto.Nombre,
+                Apellido = dto.Apellido,
+                FechaNacimiento = dto.FechaNacimiento
+            };
+
+            return await SaveAsync(nuevoPaciente);
+        }
+
         public async Task<IEnumerable<Paciente>> GetListAsync(string searchText)
         {
             IEnumerable<Paciente> list = new List<Paciente>();
             list = await unitOfWork.AddRepositories.GetRepository<Paciente>()
-                .GetListAsync(x => x.Nombre.ToUpper().Contains(searchText.ToUpper()) ||
-                                  x.Apellido.ToUpper().Contains(searchText.ToUpper()) ||
-                                  x.Dni.Contains(searchText));
+                .GetListAsync(x => x.Nombre.ToUpper().Contains(searchText.ToUpper()) || x.Apellido.ToUpper().Contains(searchText.ToUpper()) || x.Dni.Contains(searchText));
             return list;
         }
 
@@ -32,8 +49,7 @@ namespace PruebaTecnica.Business
 
         public async Task<Paciente> GetByDniAsync(string dni)
         {
-            var list = await unitOfWork.AddRepositories.GetRepository<Paciente>()
-                .GetListAsync(x => x.Dni == dni);
+            var list = await unitOfWork.AddRepositories.GetRepository<Paciente>().GetListAsync(x => x.Dni == dni);
             return list.FirstOrDefault();
         }
 

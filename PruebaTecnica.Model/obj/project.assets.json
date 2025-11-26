@@ -5215,11 +5215,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj",
+      "projectUniqueName": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj",
       "projectName": "PruebaTecnica.Model",
-      "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj",
+      "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj",
       "packagesPath": "C:\\Users\\matia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\obj\\",
+      "outputPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

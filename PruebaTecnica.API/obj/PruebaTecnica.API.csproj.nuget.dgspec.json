@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.API\\PruebaTecnica.API.csproj": {}
+    "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.API\\PruebaTecnica.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.API\\PruebaTecnica.API.csproj": {
+    "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.API\\PruebaTecnica.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.API\\PruebaTecnica.API.csproj",
+        "projectUniqueName": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.API\\PruebaTecnica.API.csproj",
         "projectName": "PruebaTecnica.API",
-        "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.API\\PruebaTecnica.API.csproj",
+        "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.API\\PruebaTecnica.API.csproj",
         "packagesPath": "C:\\Users\\matia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.API\\obj\\",
+        "outputPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,14 +32,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Business\\PruebaTecnica.Business.csproj": {
-                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Business\\PruebaTecnica.Business.csproj"
+              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Business\\PruebaTecnica.Business.csproj": {
+                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Business\\PruebaTecnica.Business.csproj"
               },
-              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj"
+              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj"
               },
-              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj": {
-                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj"
+              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj": {
+                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj"
               }
             }
           }
@@ -122,14 +122,14 @@
         }
       }
     },
-    "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Business\\PruebaTecnica.Business.csproj": {
+    "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Business\\PruebaTecnica.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Business\\PruebaTecnica.Business.csproj",
+        "projectUniqueName": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Business\\PruebaTecnica.Business.csproj",
         "projectName": "PruebaTecnica.Business",
-        "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Business\\PruebaTecnica.Business.csproj",
+        "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Business\\PruebaTecnica.Business.csproj",
         "packagesPath": "C:\\Users\\matia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Business\\obj\\",
+        "outputPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -150,11 +150,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj"
+              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj"
               },
-              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj": {
-                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj"
+              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj": {
+                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj"
               }
             }
           }
@@ -206,14 +206,14 @@
         }
       }
     },
-    "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj": {
+    "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj",
         "projectName": "PruebaTecnica.DataAccess",
-        "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj",
+        "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.DataAccess\\PruebaTecnica.DataAccess.csproj",
         "packagesPath": "C:\\Users\\matia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -234,8 +234,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj": {
-                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj"
+              "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj": {
+                "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj"
               }
             }
           }
@@ -291,14 +291,14 @@
         }
       }
     },
-    "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj": {
+    "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj",
+        "projectUniqueName": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj",
         "projectName": "PruebaTecnica.Model",
-        "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj",
+        "projectPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\PruebaTecnica.Model.csproj",
         "packagesPath": "C:\\Users\\matia\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica\\PruebaTecnica.Model\\obj\\",
+        "outputPath": "C:\\Users\\matia\\Escritorio\\CHALLENGE\\PruebaTecnica.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using PruebaTecnica.API.Common;
 using PruebaTecnica.Business;
 using PruebaTecnica.Model.BaseDTO;
 using PruebaTecnica.Model.DTO;
@@ -41,33 +42,66 @@ namespace PruebaTecnica.API.Controllers
         }
 
         [HttpPost()]
-        public async Task<ActionResult<ActionResultDTO>> Add([FromBody] MedicoDTO dto)
+        public async Task<ActionResult<MedicoDTO>> CreateMedico([FromBody] MedicoDTO dto)
         {
             try
             {
                 if (dto == null)
                     return BadRequest(new ActionResultDTO { Message = "Datos inválidos" });
 
-                if (string.IsNullOrWhiteSpace(dto.Nombre))
-                    return BadRequest(new ActionResultDTO { Message = "El nombre del médico es requerido" });
+                var medico = await medicoBusiness.CreateMedicoAsync(dto);
+                var medicoDto = mapper.Map<MedicoDTO>(medico);
 
-                if (string.IsNullOrWhiteSpace(dto.Matricula))
-                    return BadRequest(new ActionResultDTO { Message = "La matrícula del médico es requerida" });
+                return Ok(medicoDto);
+            }
+            catch (BusinessException bex)
+            {
+                return BadRequest(new ActionResultDTO { Message = bex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ActionResultDTO { Message = $"Error interno: {ex.Message}" });
+            }
+        }
 
-                var entity = mapper.Map<Medico>(dto);
-                var result = await medicoBusiness.SaveAsync(entity);
-                var response = new ActionResultDTO { Code = result.ToString() };
+        [HttpPut("{id}")]
+        public async Task<ActionResult<MedicoDTO>> UpdateMedico(int id, [FromBody] MedicoDTO dto)
+        {
+            try
+            {
+                if (dto == null)
+                    return BadRequest(new ActionResultDTO { Message = "Datos inválidos" });
 
-                if (result > 0)
-                {
-                    response.Message = dto.Id > 0 ? "El médico se actualizó correctamente" : "El médico se registró correctamente";
-                    return Ok(response);
-                }
+                var medico = await medicoBusiness.UpdateMedicoAsync(id, dto);
+                var medicoDto = mapper.Map<MedicoDTO>(medico);
+
+                return Ok(medicoDto);
+            }
+            catch (BusinessException bex)
+            {
+                return BadRequest(new ActionResultDTO { Message = bex.Message });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ActionResultDTO { Message = $"Error interno: {ex.Message}" });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<ActionResultDTO>> DeleteMedico(int id)
+        {
+            try
+            {
+                var result = await medicoBusiness.DeleteAsync(id);
+
+                if (result)
+                    return Ok(new ActionResultDTO { Code = "200", Message = "El médico se eliminó correctamente" });
                 else
-                {
-                    response.Message = "Error al registrar el médico";
-                    return BadRequest(response);
-                }
+                    return NotFound(new ActionResultDTO { Message = $"No se encontró un médico con el ID {id}" });
+            }
+            catch (BusinessException bex)
+            {
+                return BadRequest(new ActionResultDTO { Message = bex.Message });
             }
             catch (Exception ex)
             {

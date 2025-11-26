@@ -20,32 +20,6 @@
     ]
   },
   {
-    "ContainingType": "PruebaTecnica.API.Controllers.EstudioController",
-    "Method": "Add",
-    "RelativePath": "api/Estudio",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "PruebaTecnica.Model.DTO.EstudioDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "PruebaTecnica.Model.BaseDTO.ActionResultDTO",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
     "ContainingType": "PruebaTecnica.API.Controllers.MedicoController",
     "Method": "GetAllMedicos",
     "RelativePath": "api/Medico",
@@ -67,7 +41,7 @@
   },
   {
     "ContainingType": "PruebaTecnica.API.Controllers.MedicoController",
-    "Method": "Add",
+    "Method": "CreateMedico",
     "RelativePath": "api/Medico",
     "HttpMethod": "POST",
     "IsController": true,
@@ -81,7 +55,90 @@
     ],
     "ReturnTypes": [
       {
+        "Type": "PruebaTecnica.Model.DTO.MedicoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PruebaTecnica.API.Controllers.MedicoController",
+    "Method": "UpdateMedico",
+    "RelativePath": "api/Medico/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "PruebaTecnica.Model.DTO.MedicoDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PruebaTecnica.Model.DTO.MedicoDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PruebaTecnica.API.Controllers.MedicoController",
+    "Method": "DeleteMedico",
+    "RelativePath": "api/Medico/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
         "Type": "PruebaTecnica.Model.BaseDTO.ActionResultDTO",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "PruebaTecnica.API.Controllers.PacienteController",
+    "Method": "CreatePaciente",
+    "RelativePath": "api/Paciente",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "PruebaTecnica.Model.DTO.PacienteDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "PruebaTecnica.Model.DTO.PacienteDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -102,32 +159,6 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IList\u00601[[PruebaTecnica.Model.DTO.PacienteDTO, PruebaTecnica.Model, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "PruebaTecnica.API.Controllers.PacienteController",
-    "Method": "Add",
-    "RelativePath": "api/Paciente",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "dto",
-        "Type": "PruebaTecnica.Model.DTO.PacienteDTO",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "PruebaTecnica.Model.BaseDTO.ActionResultDTO",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -306,21 +337,5 @@
         "StatusCode": 200
       }
     ]
-  },
-  {
-    "ContainingType": "PruebaTecnica.API.Controllers.AuthenticationController",
-    "Method": "Authenticate",
-    "RelativePath": "Authentication/Authenticate",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "request",
-        "Type": "PruebaTecnica.API.Common.Model.SigninRequest",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
   }
 ]

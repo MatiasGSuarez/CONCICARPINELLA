@@ -26,15 +26,6 @@ namespace PruebaTecnica.API.Mapper
                     .ReverseMap()
                     .ForMember(dest => dest.Estudios, opt => opt.Ignore());
 
-                // Mapeo para PacienteSolicitudDTO a Paciente
-                CreateMap<PacienteSolicitudDTO, Paciente>()
-                    .ForMember(dest => dest.Id, opt => opt.Ignore())
-                    .ForMember(dest => dest.Dni, opt => opt.MapFrom(src => src.Dni))
-                    .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.Nombre))
-                    .ForMember(dest => dest.Apellido, opt => opt.MapFrom(src => src.Apellido))
-                    .ForMember(dest => dest.FechaNacimiento, opt => opt.MapFrom(src => src.FechaNacimiento))
-                    .ForMember(dest => dest.Estudios, opt => opt.Ignore());
-
                 // Mapeo para Estudio y EstudioDTO
                 CreateMap<Estudio, EstudioDTO>()
                     .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
@@ -53,32 +44,12 @@ namespace PruebaTecnica.API.Mapper
                     .ForMember(dest => dest.Medico, opt => opt.Ignore())
                     .ForMember(dest => dest.Prestador, opt => opt.Ignore());
 
-                // Mapeo para EstudioSolicitudDTO a Estudio
-                CreateMap<EstudioSolicitudDTO, Estudio>()
-                    .ForMember(dest => dest.Id, opt => opt.Ignore())
-                    .ForMember(dest => dest.Codigo, opt => opt.MapFrom(src => src.Codigo))
-                    .ForMember(dest => dest.Descripcion, opt => opt.MapFrom(src => src.Descripcion))
-                    .ForMember(dest => dest.FechaSolicitud, opt => opt.MapFrom(src => src.FechaSolicitud))
-                    .ForMember(dest => dest.PacienteId, opt => opt.Ignore())
-                    .ForMember(dest => dest.MedicoId, opt => opt.Ignore())
-                    .ForMember(dest => dest.PrestadorId, opt => opt.Ignore())
-                    .ForMember(dest => dest.Paciente, opt => opt.Ignore())
-                    .ForMember(dest => dest.Medico, opt => opt.Ignore())
-                    .ForMember(dest => dest.Prestador, opt => opt.Ignore());
-
                 // Mapeo para Medico y MedicoDTO
                 CreateMap<Medico, MedicoDTO>()
                     .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                     .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.Nombre))
                     .ForMember(dest => dest.Matricula, opt => opt.MapFrom(src => src.Matricula))
                     .ReverseMap()
-                    .ForMember(dest => dest.Estudios, opt => opt.Ignore());
-
-                // Mapeo para MedicoSolicitudDTO a Medico
-                CreateMap<MedicoSolicitudDTO, Medico>()
-                    .ForMember(dest => dest.Id, opt => opt.Ignore())
-                    .ForMember(dest => dest.Nombre, opt => opt.MapFrom(src => src.Nombre))
-                    .ForMember(dest => dest.Matricula, opt => opt.MapFrom(src => src.Matricula))
                     .ForMember(dest => dest.Estudios, opt => opt.Ignore());
 
                 // Mapeo para Prestador y PrestadorDTO
