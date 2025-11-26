@@ -41,7 +41,7 @@ namespace PruebaTecnica.Business
             string matriculaFormateada = FormatearMatricula(matricula);
             var medico = await GetByMatriculaFormateadaAsync(matriculaFormateada);
             if (medico == null)
-                throw new Exception($"No se encontró un médico con matricula: {matriculaFormateada}");
+                throw new Exception($"No se encontró un médico con matrícula: {matriculaFormateada}");
 
             medico.Nombre = dto.Nombre;
             medico.Matricula = FormatearMatricula(dto.Matricula);
